@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Khai báo gọi điện cho nhà cung cấp -->
+    <uses-permission
+        android:name="android.permission.CALL_PHONE"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Demo"
+        tools:targetApi="31">
+        <activity
+            android:name="com.example.DonHang.DonHangActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.Login.XemChiTietAdminActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:enabled="true"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.example.NhaCungCap.XemChiTietNhaCungCapActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.NhaCungCap.SuaNhaCungCapActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.NhaCungCap.ThemNhaCungCapActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.NhaCungCap.NhaCungCapActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.Login.WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.Login.DangNhapActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.Login.DangKyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.DashBoard"
+            android:exported="false" />
+        <activity
+            android:name="com.example.HangHoa.LichSuHeThongActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.HangHoa.SuaHHActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.HangHoa.ThemMoiHangHoaActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.HangHoa.XemChiTietActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.HangHoa.MainActivityHangHoa"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.Customer.Activities.DanhSachKhachHang"
+            android:exported="true" />
+        <activity
+            android:name="com.example.Customer.Activities.AddCustomer"
+            android:exported="false" />
+        <activity
+            android:name="com.example.Customer.Activities.ThongTinChiTiet"
+            android:exported="false" />
+    </application>
+
+</manifest>
